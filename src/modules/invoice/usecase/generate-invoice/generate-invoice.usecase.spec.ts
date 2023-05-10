@@ -13,14 +13,13 @@ describe("GenerateInvoiceUseCase unit test", () => {
     const input = {
       name: "John Doe",
       document: "12345678900",
-      address: {
-        street: "Rua 1",
-        number: "123",
-        complement: "Casa",
-        city: "São Paulo",
-        state: "SP",
-        zipCode: "12345678",
-      },
+      street: "Rua 1",
+      number: "123",
+      complement: "Casa",
+      city: "São Paulo",
+      state: "SP",
+      zipCode: "12345678",
+
       items: [
         {
           id: "123",
@@ -42,9 +41,9 @@ describe("GenerateInvoiceUseCase unit test", () => {
     expect(result.id).toBeDefined;
     expect(result.name).toBe(input.name);
     expect(result.document).toBe(input.document);
-    expect(result.street).toBe(input.address.street);
-    expect(result.number).toBe(input.address.number);
-    expect(result.city).toBe(input.address.city);
-    expect(result.zipCode).toBe(input.address.zipCode);
+    expect(result.street).toBe(input.street);
+    expect(result.number).toBe(input.number);
+    expect(result.city).toBe(input.city);
+    expect(result.zipCode).toBe(input.zipCode);
   });
 });

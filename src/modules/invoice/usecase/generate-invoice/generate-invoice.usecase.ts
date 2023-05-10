@@ -19,12 +19,12 @@ export default class GenerateInvoiceUseCase {
     input: GenerateInvoiceUseCaseInputDto
   ): Promise<GenerateInvoiceUseCaseOutputDto> {
     const address = new Address(
-      input.address.street,
-      input.address.number,
-      input.address.complement,
-      input.address.city,
-      input.address.state,
-      input.address.zipCode
+      input.street,
+      input.number,
+      input.complement,
+      input.city,
+      input.state,
+      input.zipCode
     );
 
     let items: InvoiceItem[] = [];

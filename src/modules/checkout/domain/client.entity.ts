@@ -12,11 +12,9 @@ type ClientProps = {
   city: string;
   state: string;
   zipCode: string;
-  createdAt?: Date;
-  updatedAt?: Date;
 };
 
-export default class Client extends BaseEntity implements AggregateRoot {
+export class Client extends BaseEntity implements AggregateRoot {
   private _name: string;
   private _email: string;
   private _street: string;
@@ -27,7 +25,7 @@ export default class Client extends BaseEntity implements AggregateRoot {
   private _zipCode: string;
 
   constructor(props: ClientProps) {
-    super(props.id, props.createdAt, props.updatedAt);
+    super(props.id);
     this._name = props.name;
     this._email = props.email;
     this._street = props.street;
@@ -46,7 +44,7 @@ export default class Client extends BaseEntity implements AggregateRoot {
     return this._email;
   }
 
-  get street(): string {
+  get addStreet(): string {
     return this._street;
   }
 
